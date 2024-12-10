@@ -1,0 +1,67 @@
+/* 最上方藍藍 */
+.nav-box {
+  height: 30px;
+  background-color: #aac8ce;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+/* navbar下方陰影 */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar ul li a {
+  font-weight: bold;
+}
+
+/* 藍綠色按鈕 */
+.custom-button {
+  background-color: #aac8ce;
+  color: white; /* 按鈕文字顏色 */
+  font-weight: bold;
+  border: none; /* 去除邊框 */
+  padding: 10px 15px; /* 內邊距 */
+  text-align: center; /* 文字居中 */
+  font-size: 15px; /* 字體大小 */
+  margin: 2px 1px; /* 外邊距 */
+  border-radius: 11px;
+}
+
+.mid-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  margin-top: 100px; /* 添加上邊距 */
+}
+
+.mid-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  margin-top: 20px;
+}
+.section {
+  margin: 0 10px;
+  text-align: center;
+}
+.section img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #aac8ce;
+  height: 500px;
+  width: 100%;
+}
