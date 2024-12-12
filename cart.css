@@ -1,0 +1,88 @@
+.add-to-cart {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 15px;
+  background-color: #ddd;
+  border: none;
+  cursor: not-allowed;
+  color: #aaa;
+  border-radius: 5px;
+}
+
+.add-to-cart.enabled {
+  background-color: #aac8ce;
+  color: #fff;
+  cursor: pointer;
+}
+
+.cart {
+  position: fixed;
+  right: 20px;
+  top: 150px;
+  width: 300px;
+  background-color: #fffffff4;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 10px;
+  z-index: 1000;
+  display: none;
+  transition: all 0.3s ease;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+.cart-footer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* 新增購物車畫面的刪除按鈕 X */
+.remove-item {
+  cursor: pointer;
+  color: black;
+  margin-left: 10px;
+}
+.cart-item-details {
+  display: flex;
+  align-items: center;
+}
+
+.cart.show {
+  display: block;
+}
+
+/* 購物車icon btn */
+.cart-toggle-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 150px;
+  width: 50px;
+  height: 50px;
+  background-color: #c5eef6;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1001;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.cart-toggle-btn:hover {
+  background-color: #0056b3;
+}
+.cart-toggle-btn img {
+  width: 30px;
+  height: 30px;
+}
