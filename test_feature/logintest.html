@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <title>會員登入系統</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #f4f4f4;
+      }
+      input {
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+      #message,
+      #userInfo {
+        margin-top: 20px;
+      }
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="registerForm">
+      <h2>會員註冊</h2>
+      <input type="text" id="regUsername" placeholder="帳號" />
+      <input type="password" id="regPassword" placeholder="密碼" />
+      <button onclick="registerUser()">註冊</button>
+    </div>
+
+    <div id="loginForm">
+      <h2>會員登入</h2>
+      <input type="text" id="loginUsername" placeholder="帳號" />
+      <input type="password" id="loginPassword" placeholder="密碼" />
+      <button onclick="loginUser()">登入</button>
+    </div>
+
+    <div id="userArea" class="hidden">
+      <h2>會員中心</h2>
+      <div id="userInfo"></div>
+      <button onclick="logout()">登出</button>
+    </div>
+
+    <div id="message"></div>
+
+    <script>
+      // 頁面載入時檢查登入狀態
+      document.addEventListener("DOMContentLoaded", checkLoginStatus);
+
+      // 初始化用戶資料列表
+      if (!localStorage.getItem("users")) {
+        localStorage.setItem("users", JSON.stringify([]));
+      }
+
+      function registerUser() {
+        const username = document.getElementById("regUsername").value;
+        const password = document.getElementById("regPassword").value;
+        const messageDiv = document.getElementById("message");
+
+        // 檢查帳號密碼是否為空
+        if (!username || !password) {
+          messageDiv.textContent = "請輸入帳號和密碼";
+          messageDiv.style.color = "red";
+          return;
+        }
+
+        // 取得現有用戶列表
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        // 檢查帳號是否已存在
+        const existingUser = users.find((user) => user.username === username);
+        if (existingUser) {
+          messageDiv.textContent = "此帳號已存在";
+          messageDiv.style.color = "red";
+          return;
+        }
+
+        // 新增用戶
+        users.push({ username, password });
+        localStorage.setItem("users", JSON.stringify(users));
+
+        messageDiv.textContent = "註冊成功！";
+        messageDiv.style.color = "green";
+      }
+
+      function loginUser() {
+        const username = document.getElementById("loginUsername").value;
+        const password = document.getElementById("loginPassword").value;
+        const messageDiv = document.getElementById("message");
+
+        // 檢查帳號密碼是否為空
+        if (!username || !password) {
+          messageDiv.textContent = "請輸入帳號和密碼";
+          messageDiv.style.color = "red";
+          return;
+        }
+
+        // 取得現有用戶列表
+        let users = JSON.parse(localStorage.getItem("users"));
+
+        // 驗證帳號密碼
+        const user = users.find(
+          (user) => user.username === username && user.password === password
+        );
+
+        if (user) {
+          // 登入成功，設置登入狀態
+          localStorage.setItem("currentUser", username);
+
+          // 切換畫面
+          document.getElementById("registerForm").classList.add("hidden");
+          document.getElementById("loginForm").classList.add("hidden");
+          document.getElementById("userArea").classList.remove("hidden");
+
+          // 顯示用戶資訊
+          document.getElementById(
+            "userInfo"
+          ).textContent = `歡迎，${username}！`;
+
+          messageDiv.textContent = "登入成功！";
+          messageDiv.style.color = "green";
+        } else {
+          messageDiv.textContent = "帳號或密碼錯誤";
+          messageDiv.style.color = "red";
+        }
+      }
+
+      function logout() {
+        // 清除當前登入狀態
+        localStorage.removeItem("currentUser");
+
+        // 切換畫面
+        document.getElementById("registerForm").classList.remove("hidden");
+        document.getElementById("loginForm").classList.remove("hidden");
+        document.getElementById("userArea").classList.add("hidden");
+
+        // 清空訊息
+        document.getElementById("message").textContent = "";
+
+        // 清空輸入框
+        document.getElementById("loginUsername").value = "";
+        document.getElementById("loginPassword").value = "";
+      }
+
+      function checkLoginStatus() {
+        const currentUser = localStorage.getItem("currentUser");
+
+        if (currentUser) {
+          // 如果已登入，顯示會員中心
+          document.getElementById("registerForm").classList.add("hidden");
+          document.getElementById("loginForm").classList.add("hidden");
+          document.getElementById("userArea").classList.remove("hidden");
+
+          // 顯示用戶資訊
+          document.getElementById(
+            "userInfo"
+          ).textContent = `歡迎，${currentUser}！`;
+        }
+      }
+    </script>
+  </body>
+</html>
