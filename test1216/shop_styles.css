@@ -1,0 +1,87 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 50px 20px 20px;
+  max-width: 1200px;
+}
+.product {
+  position: relative;
+  width: 23%;
+  height: 500px;
+  /* box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); */
+  border-radius: 5px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  text-align: center;
+  background-color: #fff;
+}
+.product img {
+  width: 100%;
+  height: 300px;
+  transition: transform 0.3s ease;
+  object-fit: cover;
+}
+
+.product img.default {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  opacity: 1;
+}
+.product img.hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+}
+.product img:hover.default {
+  opacity: 0;
+}
+.product img:hover.hover {
+  opacity: 1;
+}
+.info {
+  position: absolute; /* 設置 info 為絕對定位 */
+  bottom: 0;
+  width: 100%;
+  padding-bottom: 20px;
+  background: rgba(255, 255, 255, 0.8); /* 可選：設置背景透明度 */
+}
+.info h4 {
+  margin: 10px 0;
+}
+.info .price {
+  color: #8bc6d1;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.quantity {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.quantity button {
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  cursor: pointer;
+}
+.quantity span {
+  margin: 0 10px;
+}

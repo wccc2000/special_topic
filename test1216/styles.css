@@ -1,0 +1,259 @@
+/* 最上方藍藍 */
+.nav-box {
+  background-color: #aac8ce;
+  height: 30px;
+  text-align: center;
+}
+
+/* navbar下方陰影 */
+.navbar {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* navbar字體 */
+.navbar ul li a {
+  font-weight: bold;
+}
+
+.dropdown-menu {
+  border: none;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 藍綠色按鈕 */
+.custom-button {
+  background-color: #aac8ce;
+  border: none; /* 去除邊框 */
+  border-radius: 11px; /* 圓角邊框 */
+  color: white; /* 按鈕文字顏色 */
+  font-size: 15px; /* 字體大小 */
+  font-weight: bold;
+  margin: 2px 1px; /* 外邊距 */
+  padding: 10px 15px; /* 內邊距 */
+  text-align: center; /* 文字居中 */
+}
+
+.first-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  height: 90vh;
+  margin: 0;
+  margin-top: 100px; /* 添加上邊距 */
+}
+
+.mid-card {
+  align-items: flex-start; /* 確保所有項目頂部對齊 */
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  width: 80%;
+}
+
+.card-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  text-align: center;
+  width: 500px;
+}
+
+.card-section2 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  margin-top: 15px;
+  text-align: center;
+  width: 500px;
+  line-height: 2.5;
+}
+
+.card-section2 p {
+  font-weight: bold;
+  font-size: 15px;
+  color: rgb(127, 127, 127);
+}
+
+.card-section img {
+  height: auto;
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+
+.second-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  height: 70vh;
+  /* margin: 0; */
+  margin-top: 150px; /* 添加上邊距 */
+}
+
+.third-section {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  width: auto;
+  margin-top: 150px;
+}
+
+.third-section img {
+  padding: 0 50px;
+  height: auto;
+  max-width: 100%;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #aac8ce;
+  height: 500px;
+  padding: 30px;
+  text-align: center; /* 文字居中 */
+  margin-top: 100px;
+  width: 100%; /* 固定位置 */
+}
+
+.footer div {
+  margin-top: 30px;
+}
+
+.footer div p {
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 1;
+}
+
+.footer div img {
+  width: 30px;
+  height: auto;
+}
+.social-icons {
+  display: flex;
+  gap: 10px; /* 設置圖標之間的間距 */
+}
+
+.social-icons button {
+  background: none; /* 移除背景 */
+  border: none; /* 移除邊框 */
+  padding: 0; /* 移除內邊距 */
+  cursor: pointer; /* 手勢游標 */
+}
+
+.about_container {
+  display: flex;
+  justify-content: space-between; /* 確保圖片之間等距 */
+  padding: 0 50px; /* 調整這裡的值來設置最左和最右的圖片與網頁邊緣的距離 */
+}
+.about_container img {
+  width: 32.5%; /* 確保圖片佔容器的百分比寬度，讓它們能隨頁面大小變化 */
+  height: auto; /* 確保圖片高度自適應 */
+}
+
+h1 {
+  color: rgb(90, 89, 89);
+  font-weight: bold;
+}
+
+h4 {
+  color: rgb(60, 59, 59);
+  font-weight: bold;
+}
+
+h5 {
+  color: rgb(90, 89, 89);
+  font-weight: bold;
+}
+
+/*login配置  */
+#message,
+#userInfo {
+  margin-top: 20px;
+}
+.hidden {
+  display: none;
+}
+
+#loginForm > input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#loginForm > button {
+  width: 100%;
+  padding: 10px;
+  background-color: #aac8ce;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.modal-footer > button {
+  width: 100%;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#loginNav {
+  font-size: 16px;
+  color: #fff;
+  background-color: #aac8ce;
+  padding: 10px 15px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+#loginNav:hover {
+  background-color: #aac8ce;
+}
+
+/* create account */
+
+.createAccount {
+  display: flex;
+  justify-content: flex-end;
+  background-color: none;
+}
+
+.createAccount > button {
+  border: none;
+  border-radius: 4px;
+  background-color: white;
+  color: #4bb3e7;
+  right: 10px;
+}
+
+#registerForm > input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+#registerForm > button {
+  width: 100%;
+  padding: 10px;
+  background-color: #aac8ce;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 10px;
+}

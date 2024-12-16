@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>關於我們</title>
+    <link rel="shortcut icon" href="../images/cloud.ico" type="image/x-icon" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </head>
+
+  <body>
+    <div class="nav-box"></div>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
+      <div class="container-fluid">
+        <!-- 左側Logo -->
+        <a class="navbar-brand d-flex align-items-center" href="index.html">
+          <img src="../images/logo.png" alt="Logo" height="50" class="me-2" />
+        </a>
+
+        <!-- 漢堡選單按鈕 -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- 導覽連結 -->
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                文創商品
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="shop1.html">杯子系列</a></li>
+                <li><a class="dropdown-item" href="shop2.html">娃娃抱枕</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">關於我們</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+              <!-- 動態顯示帳號名稱 -->
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"></a>
+            </li>
+          </ul>
+          <div class="loginBtn">
+            <button
+              type="button"
+              class="custom-button"
+              data-bs-toggle="modal"
+              data-bs-target="#staticBackdrop"
+              id="loginNav"
+            >
+              登入
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" id="loginModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="staticBackdropLabel">會員登入</h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="loginForm">
+              <input type="text" id="loginUsername" placeholder="帳號" />
+              <input type="password" id="loginPassword" placeholder="密碼" />
+              <button onclick="loginUser()">登入</button>
+            </div>
+            <div>
+              <div id="message"></div>
+              <div class="createAccount">
+                <button
+                  type="button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#registrationModal"
+                >
+                  註冊帳號
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--註冊modal  -->
+    <div
+      class="modal fade"
+      id="registrationModal"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="registrationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" id="registerModal">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="registrationModalLabel">
+              會員註冊
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div id="registerForm">
+              <input type="text" id="regUsername" placeholder="帳號" />
+              <input type="password" id="regPassword" placeholder="密碼" />
+              <button id="registerButton">註冊</button>
+            </div>
+            <div>
+              <div id="registerMessage"></div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="second-section">
+      <div class="mid-card">
+        <div class="card-section">
+          <img src="../images/aboutme.webp" alt="Left Image" />
+        </div>
+        <div class="card-section2">
+          <h4 style="font-weight: bold">方坊 Square Studio</h4>
+          <br />
+          <h5>Embrace your emotions, cuz they’re all cute!</h5>
+          <p>
+            <br />
+            所有的靈感來自於一個正方的小工作室。 創作主要選用很柔和、<br />舒服的配色，希望可以在這浮躁的世界中，<br />療癒大家的日常。
+          </p>
+          <p>
+            2019 年創造的角色 "喜寶"、"怒君"、"小哀"、"樂樂"，<br />就像住在我們心中，4
+            隻可愛的小精靈，<br />時時刻刻主宰著我們的心情。
+            小雲朵般的不規則造型<br />也象徵著情緒的不可捉摸。
+            <br />但無論是怎樣的心情，都還是堅持要保持可愛 : )
+          </p>
+          <p></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about_container">
+      <img src="../images/about1.webp" alt="Image 1" />
+      <img src="../images/about2.webp" alt="Image 2" />
+      <img src="../images/about3.webp" alt="Image 3" />
+    </div>
+    <!-- <div class="third-section">
+      <img src="../images/redhouse.jpg" alt="" />
+    </div> -->
+
+    <!-- 底部 -->
+    <div class="footer">
+      <div class="social-icons">
+        <button>
+          <img src="../images/fb.png" alt="fb icon" />
+        </button>
+        <button>
+          <img src="../images/ig.png" alt="ig icon" />
+        </button>
+      </div>
+      <div>
+        <br />
+        <p style="font-weight: bold; font-size: 16px">聯絡我們</p>
+        <br />
+        <p>服務時間: 週一至週五 10:00 - 19:00</p>
+        <p>客服信箱: service@squarestudiotw.com</p>
+        <p>品牌合作: hello@squarestudiotw.com</p>
+        <p>地址: 台北市松山區民生東路五段162號2F-4</p>
+      </div>
+      <div>
+        <br />
+        <p style="font-size: 20px">- 本網站無商業用途，純學術練習 -</p>
+        <p>設計參考來源 : www.squarestudiotw.com</p>
+      </div>
+    </div>
+    <script src="test_login.js"></script>
+    <script src="common.js"></script>
+  </body>
+</html>
